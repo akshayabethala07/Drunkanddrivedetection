@@ -1,0 +1,23 @@
+[
+  {
+    "model": "users.gender",
+    "pk": 1,
+    "fields": {
+      "name": "Male"
+    }
+  },
+  {
+    "model": "users.gender",
+    "pk": 2,
+    "fields": {
+      "name": "Female"
+    }
+  },
+  {
+    "model": "users.gender",
+    "pk": 3,
+    "fields": {
+      "name": "Other"
+    }
+  }
+]

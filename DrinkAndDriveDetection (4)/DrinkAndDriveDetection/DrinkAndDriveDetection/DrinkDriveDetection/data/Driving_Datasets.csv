@@ -1,0 +1,11 @@
+idnumber,City_Location,day,Sex,Age,Time,Day_of_week,Educational_level,Vehicle_driver_relation,Driving_experience,Type_of_vehicle,Owner_of_vehicle,Service_year_of_vehicle,Lanes_or_Medians,Road_allignment,Road_surface_type,Vehicle_movement,Label
+1,New York,15,Male,35,18:30,Wednesday,High School,Owner,10 years,Car,Self,5,Straight,Straight,Dry,Straight,0
+2,Los Angeles,10,Female,28,22:15,Saturday,College,Driver,5 years,Truck,Company,3,Curved,Straight,Wet,Curved,1
+3,Chicago,5,Male,45,08:00,Monday,High School,Owner,20 years,Bike,Self,8,Straight,Straight,Dry,Straight,0
+4,Houston,20,Male,32,16:45,Thursday,College,Driver,8 years,SUV,Family,4,Curved,Straight,Wet,Straight,1
+5,Miami,12,Female,40,19:00,Friday,Graduate,Owner,15 years,Van,Self,6,Straight,Curved,Dry,Curved,0
+6,Atlanta,3,Male,38,07:30,Tuesday,College,Owner,18 years,Car,Self,7,Curved,Curved,Dry,Straight,1
+7,Dallas,25,Male,30,21:45,Sunday,High School,Driver,7 years,Truck,Company,2,Straight,Curved,Wet,Curved,1
+8,Phoenix,8,Female,25,14:15,Monday,High School,Owner,5 years,Bike,Self,4,Curved,Straight,Dry,Curved,0
+9,San Diego,18,Female,33,09:30,Thursday,College,Driver,12 years,SUV,Family,6,Straight,Straight,Wet,Straight,1
+10,Philadelphia,1,Male,29,20:30,Saturday,Graduate,Owner,9 years,Van,Self,3,Curved,Curved,Dry,Straight,0

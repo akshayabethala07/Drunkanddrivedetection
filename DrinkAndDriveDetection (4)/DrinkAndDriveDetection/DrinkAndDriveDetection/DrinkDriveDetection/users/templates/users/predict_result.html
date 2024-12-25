@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2>Drink Driving Prediction Result</h2>
+    <div class="card mb-4">
+        <div class="card-body">
+            <p><strong>ID Number:</strong> {{ idnumber }}</p>
+            <p><strong>City Location:</strong> {{ City_Location }}</p>
+        </div>
+    </div>
+
+    <h3>Logistic Regression Model Results</h3>
+    <div class="card mb-4">
+        <div class="card-body">
+            <p><strong>Accuracy:</strong> {{ logistic_accuracy }}%</p>
+            <h4>Classification Report</h4>
+            <pre>{{ logistic_class_report }}</pre>
+            <h4>Confusion Matrix</h4>
+            <pre>{{ logistic_confusion_matrix }}</pre>
+        </div>
+    </div>
+
+    <h3>SVM Model Results</h3>
+    <div class="card mb-4">
+        <div class="card-body">
+            <p><strong>Accuracy:</strong> {{ svm_accuracy }}%</p>
+            <h4>Classification Report</h4>
+            <pre>{{ svm_class_report }}</pre>
+            <h4>Confusion Matrix</h4>
+            <pre>{{ svm_confusion_matrix }}</pre>
+        </div>
+    </div>
+
+    <h3>Naive Bayes Model Results</h3>
+    <div class="card mb-4">
+        <div class="card-body">
+            <p><strong>Accuracy:</strong> {{ naivebayes_accuracy }}%</p>
+            <h4>Classification Report</h4>
+            <pre>{{ naivebayes_class_report }}</pre>
+            <h4>Confusion Matrix</h4>
+            <pre>{{ naivebayes_confusion_matrix }}</pre>
+        </div>
+    </div>
+
+    <h3>Decision Tree Classifier Model Results</h3>
+    <div class="card mb-4">
+        <div class="card-body">
+            <p><strong>Accuracy:</strong> {{ decision_tree_accuracy }}%</p>
+            <h4>Classification Report</h4>
+            <pre>{{ decision_tree_class_report }}</pre>
+            <h4>Confusion Matrix</h4>
+            <pre>{{ decision_tree_confusion_matrix }}</pre>
+        </div>
+    </div>
+</div>
+{% endblock %}

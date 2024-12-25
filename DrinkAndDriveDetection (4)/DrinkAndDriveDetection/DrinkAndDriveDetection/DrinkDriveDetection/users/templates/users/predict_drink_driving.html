@@ -1,0 +1,148 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2>Predict Drink Driving</h2>
+    <form method="post" action="{% url 'predict_drink_driving' %}" class="needs-validation" novalidate>
+        {% csrf_token %}
+
+        <div class="form-group">
+            <label for="idnumber">ID Number:</label>
+            <input type="text" class="form-control" id="idnumber" name="idnumber" required>
+            <div class="invalid-feedback">
+                Please enter ID Number.
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="City_Location">City Location:</label>
+            <input type="text" class="form-control" id="City_Location" name="City_Location" required>
+            <div class="invalid-feedback">
+                Please enter City Location.
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="day">Day:</label>
+            <input type="text" class="form-control" id="day" name="day" required>
+            <div class="invalid-feedback">
+                Please enter Day.
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="Sex">Sex:</label>
+            <input type="text" class="form-control" id="Sex" name="Sex" required>
+            <div class="invalid-feedback">
+                Please enter Sex.
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="Age">Age:</label>
+            <input type="text" class="form-control" id="Age" name="Age" required>
+            <div class="invalid-feedback">
+                Please enter Age.
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="Time">Time:</label>
+            <input type="text" class="form-control" id="Time" name="Time" required>
+            <div class="invalid-feedback">
+                Please enter Time.
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="Day_of_week">Day of Week:</label>
+            <input type="text" class="form-control" id="Day_of_week" name="Day_of_week" required>
+            <div class="invalid-feedback">
+                Please enter Day of Week.
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="Educational_level">Educational Level:</label>
+            <input type="text" class="form-control" id="Educational_level" name="Educational_level" required>
+            <div class="invalid-feedback">
+                Please enter Educational Level.
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="Vehicle_driver_relation">Vehicle Driver Relation:</label>
+            <input type="text" class="form-control" id="Vehicle_driver_relation" name="Vehicle_driver_relation" required>
+            <div class="invalid-feedback">
+                Please enter Vehicle Driver Relation.
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="Driving_experience">Driving Experience:</label>
+            <input type="text" class="form-control" id="Driving_experience" name="Driving_experience" required>
+            <div class="invalid-feedback">
+                Please enter Driving Experience.
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="Type_of_vehicle">Type of Vehicle:</label>
+            <input type="text" class="form-control" id="Type_of_vehicle" name="Type_of_vehicle" required>
+            <div class="invalid-feedback">
+                Please enter Type of Vehicle.
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="Owner_of_vehicle">Owner of Vehicle:</label>
+            <input type="text" class="form-control" id="Owner_of_vehicle" name="Owner_of_vehicle" required>
+            <div class="invalid-feedback">
+                Please enter Owner of Vehicle.
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="Service_year_of_vehicle">Service Year of Vehicle:</label>
+            <input type="text" class="form-control" id="Service_year_of_vehicle" name="Service_year_of_vehicle" required>
+            <div class="invalid-feedback">
+                Please enter Service Year of Vehicle.
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="Lanes_or_Medians">Lanes or Medians:</label>
+            <input type="text" class="form-control" id="Lanes_or_Medians" name="Lanes_or_Medians" required>
+            <div class="invalid-feedback">
+                Please enter Lanes or Medians.
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="Road_allignment">Road Alignment:</label>
+            <input type="text" class="form-control" id="Road_allignment" name="Road_allignment" required>
+            <div class="invalid-feedback">
+                Please enter Road Alignment.
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="Road_surface_type">Road Surface Type:</label>
+            <input type="text" class="form-control" id="Road_surface_type" name="Road_surface_type" required>
+            <div class="invalid-feedback">
+                Please enter Road Surface Type.
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="Vehicle_movement">Vehicle Movement:</label>
+            <input type="text" class="form-control" id="Vehicle_movement" name="Vehicle_movement" required>
+            <div class="invalid-feedback">
+                Please enter Vehicle Movement.
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Predict</button>
+    </form>
+</div>
+{% endblock %}

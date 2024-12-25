@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1>Profile</h1>
+    <div class="card">
+        <div class="card-body">
+            <table class="table">
+                <tr>
+                    <th>Username</th>
+                    <td>{{ object.username }}</td>
+                </tr>
+                <tr>
+                    <th>Email</th>
+                    <td>{{ object.email }}</td>
+                </tr>
+                <tr>
+                    <th>Phone Number</th>
+                    <td>{{ object.phoneno }}</td>
+                </tr>
+                <tr>
+                    <th>Country</th>
+                    <td>{{ object.country }}</td>
+                </tr>
+                <tr>
+                    <th>State</th>
+                    <td>{{ object.state }}</td>
+                </tr>
+                <tr>
+                    <th>City</th>
+                    <td>{{ object.city }}</td>
+                </tr>
+                <tr>
+                    <th>Address</th>
+                    <td>{{ object.address }}</td>
+                </tr>
+                <tr>
+                    <th>Gender</th>
+                    <td>{{ object.gender }}</td>
+                </tr>
+            </table>
+            <a href="{% url 'edit_profile' %}" class="btn btn-primary">Edit Profile</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

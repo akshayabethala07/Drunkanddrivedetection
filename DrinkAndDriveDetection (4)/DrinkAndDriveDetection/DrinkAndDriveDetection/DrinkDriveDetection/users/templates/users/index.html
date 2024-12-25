@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="jumbotron text-center" style="background-color: #495057; color: #f8f9fa;">
+    <h1>Welcome to the Drink Driving Detection System</h1>
+    <p>Predict drink driving incidents with ease</p>
+    <a class="btn btn-primary btn-lg" href="{% url 'login' %}" role="button" style="background-color: #007bff; border-color: #007bff;">Login</a>
+    <a class="btn btn-secondary btn-lg" href="{% url 'register' %}" role="button" style="background-color: #6c757d; border-color: #6c757d;">Register</a>
+</div>
+{% endblock %}

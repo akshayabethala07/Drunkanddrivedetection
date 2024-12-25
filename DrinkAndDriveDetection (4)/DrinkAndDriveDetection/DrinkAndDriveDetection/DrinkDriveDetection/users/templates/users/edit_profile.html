@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <h2>Edit Profile</h2>
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" name="username" class="form-control" id="username" value="{{ object.username }}">
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" name="email" class="form-control" id="email" value="{{ object.email }}">
+            </div>
+            <div class="form-group">
+                <label for="phoneno">Phone Number</label>
+                <input type="text" name="phoneno" class="form-control" id="phoneno" value="{{ object.phoneno }}">
+            </div>
+            <div class="form-group">
+                <label for="country">Country</label>
+                <select name="country" class="form-control" id="country">
+                    <option value="{{ object.country.id }}" selected>{{ object.country.name }}</option>
+                    <!-- Populate countries dynamically -->
+                    {% for country in countries %}
+                        <option value="{{ country.id }}">{{ country.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="state">State</label>
+                <select name="state" class="form-control" id="state">
+                    <option value="{{ object.state.id }}" selected>{{ object.state.name }}</option>
+                    <!-- States will be populated dynamically based on selected country -->
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="city">City</label>
+                <select name="city" class="form-control" id="city">
+                    <option value="{{ object.city.id }}" selected>{{ object.city.name }}</option>
+                    <!-- Cities will be populated dynamically based on selected state -->
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="address">Address</label>
+                <input type="text" name="address" class="form-control" id="address" value="{{ object.address }}">
+            </div>
+            <div class="form-group">
+                <label for="gender">Gender</label>
+                <select name="gender" class="form-control" id="gender">
+                    <option value="{{ object.gender.id }}" selected>{{ object.gender.name }}</option>
+                    <!-- Populate genders dynamically -->
+                    {% for gender in genders %}
+                        <option value="{{ gender.id }}">{{ gender.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Save Changes</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

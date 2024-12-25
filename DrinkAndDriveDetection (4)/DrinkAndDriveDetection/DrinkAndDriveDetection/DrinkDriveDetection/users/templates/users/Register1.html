@@ -1,0 +1,178 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h2>Register</h2>
+
+            <!-- Display global error message if any -->
+            {% if error_message %}
+                <div class="alert alert-danger">
+                    {{ error_message }}
+                </div>
+            {% endif %}
+
+            <form method="POST">
+                {% csrf_token %}
+                
+                <!-- Username -->
+                <div class="mb-3">
+                    <label for="id_username" class="form-label">Username</label>
+                    <input type="text" class="form-control" id="id_username" name="username" value="{{ form.username.value }}" required>
+                    {% if form.username.errors %}
+                        <div class="text-danger">
+                            {% for error in form.username.errors %}
+                                <p>{{ error }}</p>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+
+                <!-- Email -->
+                <div class="mb-3">
+                    <label for="id_email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="id_email" name="email" value="{{ form.email.value }}" required>
+                    {% if form.email.errors %}
+                        <div class="text-danger">
+                            {% for error in form.email.errors %}
+                                <p>{{ error }}</p>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+
+                <!-- Phone Number -->
+                <div class="mb-3">
+                    <label for="id_phone" class="form-label">Phone Number</label>
+                    <input type="text" class="form-control" id="id_phone" name="phone_number" value="{{ form.phone_number.value }}" required>
+                    {% if form.phone_number.errors %}
+                        <div class="text-danger">
+                            {% for error in form.phone_number.errors %}
+                                <p>{{ error }}</p>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+
+                <!-- Password -->
+                <div class="mb-3">
+                    <label for="id_password1" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="id_password1" name="password1" required>
+                    {% if form.password1.errors %}
+                        <div class="text-danger">
+                            {% for error in form.password1.errors %}
+                                <p>{{ error }}</p>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+
+                <!-- Confirm Password -->
+                <div class="mb-3">
+                    <label for="id_password2" class="form-label">Confirm Password</label>
+                    <input type="password" class="form-control" id="id_password2" name="password2" required>
+                    {% if form.password2.errors %}
+                        <div class="text-danger">
+                            {% for error in form.password2.errors %}
+                                <p>{{ error }}</p>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+
+                <!-- Country -->
+                <div class="mb-3">
+                    <label for="id_country" class="form-label">Country</label>
+                    <select class="form-control" id="id_country" name="country_id">
+                        <option value="">Select Country</option>
+                        {% for country in countries %}
+                            <option value="{{ country.id }}" {% if form.country.value == country.id %} selected {% endif %}>{{ country.name }}</option>
+                        {% endfor %}
+                    </select>
+                    {% if form.country.errors %}
+                        <div class="text-danger">
+                            {% for error in form.country.errors %}
+                                <p>{{ error }}</p>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+
+                <!-- State -->
+                <div class="mb-3">
+                    <label for="id_state" class="form-label">State</label>
+                    <select class="form-control" id="id_state" name="state_id" {% if form.state.value %} enabled {% else %} disabled {% endif %}>
+                        <option value="">Select State</option>
+                        {% for state in form.state.field.queryset %}
+                            <option value="{{ state.id }}" {% if form.state.value == state.id %} selected {% endif %}>{{ state.name }}</option>
+                        {% endfor %}
+                    </select>
+                    {% if form.state.errors %}
+                        <div class="text-danger">
+                            {% for error in form.state.errors %}
+                                <p>{{ error }}</p>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+
+                <!-- City -->
+                <div class="mb-3">
+                    <label for="id_city" class="form-label">City</label>
+                    <select class="form-control" id="id_city" name="city_id" {% if form.city.value %} enabled {% else %} disabled {% endif %}>
+                        <option value="">Select City</option>
+                        {% for city in form.city.field.queryset %}
+                            <option value="{{ city.id }}" {% if form.city.value == city.id %} selected {% endif %}>{{ city.name }}</option>
+                        {% endfor %}
+                    </select>
+                    {% if form.city.errors %}
+                        <div class="text-danger">
+                            {% for error in form.city.errors %}
+                                <p>{{ error }}</p>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+
+                <!-- Gender -->
+                <div class="mb-3">
+                    <label for="id_gender" class="form-label">Gender</label>
+                    <select class="form-control" id="id_gender" name="gender">
+                        <option value="">Select Gender</option>
+                        {% for gender in genders %}
+                            <option value="{{ gender.id }}" {% if form.gender.value == gender.id %} selected {% endif %}>{{ gender.name }}</option>
+                        {% endfor %}
+                    </select>
+                    {% if form.gender.errors %}
+                        <div class="text-danger">
+                            {% for error in form.gender.errors %}
+                                <p>{{ error }}</p>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+
+                <!-- Address -->
+                <div class="mb-3">
+                    <label for="id_address" class="form-label">Address</label>
+                    <textarea class="form-control" id="id_address" name="address" rows="3">{{ form.address.value }}</textarea>
+                    {% if form.address.errors %}
+                        <div class="text-danger">
+                            {% for error in form.address.errors %}
+                                <p>{{ error }}</p>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+
+                <button type="submit" class="btn btn-primary">Register</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="{% static 'js/register.js' %}"></script>
+{% endblock %}

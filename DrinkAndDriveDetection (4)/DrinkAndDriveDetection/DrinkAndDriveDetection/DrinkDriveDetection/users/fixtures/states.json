@@ -1,0 +1,15 @@
+[
+    {"model": "users.state", "pk": 1, "fields": {"name": "Maharashtra", "country": 1}},
+    {"model": "users.state", "pk": 2, "fields": {"name": "Karnataka", "country": 1}},
+    {"model": "users.state", "pk": 3, "fields": {"name": "Tamil Nadu", "country": 1}},
+    {"model": "users.state", "pk": 4, "fields": {"name": "California", "country": 2}},
+    {"model": "users.state", "pk": 5, "fields": {"name": "Texas", "country": 2}},
+    {"model": "users.state", "pk": 6, "fields": {"name": "Victoria", "country": 3}},
+    {"model": "users.state", "pk": 7, "fields": {"name": "Queensland", "country": 3}},
+    {"model": "users.state", "pk": 8, "fields": {"name": "Ontario", "country": 4}},
+    {"model": "users.state", "pk": 9, "fields": {"name": "Quebec", "country": 4}},
+    {"model": "users.state", "pk": 10, "fields": {"name": "England", "country": 5}},
+    {"model": "users.state", "pk": 11, "fields": {"name": "Scotland", "country": 5}},
+    {"model": "users.state", "pk": 12, "fields": {"name": "Bavaria", "country": 6}},
+    {"model": "users.state", "pk": 13, "fields": {"name": "Berlin", "country": 6}}
+]
